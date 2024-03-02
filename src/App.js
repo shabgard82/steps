@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./index.css";
 import Button from "./components/Button";
+import StepMessages from "./components/StepMessages";
 
 const messages = [
   "Learn React ⚛️",
@@ -33,9 +34,8 @@ function App() {
             <div className={step >= 2 ? "active" : ""}>2</div>
             <div className={step >= 3 ? "active" : ""}>3</div>
           </div>
-          <p className="message">
-            step {step} : messages{messages[step - 1]}
-          </p>
+          <StepMessages step={step}> messages: {messages[step - 1]}</StepMessages>
+
           <div className="buttons">
             <Button
               onClick={handlePerviousClick}
